@@ -1,0 +1,54 @@
+<% include layouts/header.ejs %> 
+
+<script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+  
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Create User</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+      <div class="row">
+        <form action="/dangky" id="contactForm" method="POST" >
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="Name" name="username">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Pass</label>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <button type="submit" class="btn btn-primary" >Register</button>
+          </form>
+      </div>
+  </div>
+  
+  <% include layouts/footer.ejs %> 
+  <script>
+    CKEDITOR.replace('content');
+  </script>

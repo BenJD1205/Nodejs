@@ -1,0 +1,31 @@
+<% include layouts/header.ejs %> 
+  <header class="masthead" style="background-image: url('/img/<%= baiviet.image %>')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= baiviet.title %> </h1>
+            <h2 class="subheading"><%= baiviet.subtitle %> </h2>
+            <span class="meta">Posted by
+              <a href="#"><%= baiviet.username %> </a>
+              on <%= baiviet.createAt.toDateString() %> </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <%- baiviet.content %> 
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+<% include layouts/footer.ejs %> 
