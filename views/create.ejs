@@ -1,0 +1,60 @@
+<% include layouts/header.ejs %> 
+
+<script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+  
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+      <div class="row">
+        <form action="/them" id="contactForm" method="POST" >
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="Name" name="username">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" name="title">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Sub title</label>
+                <input type="text" class="form-control" placeholder="Sub title" name="subtitle">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Content</label>
+                <textarea name="content" cols="80" rows="10"></textarea>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <button type="submit" class="btn btn-primary" >Create post</button>
+          </form>
+      </div>
+  </div>
+  
+  <% include layouts/footer.ejs %> 
+  <script>
+    CKEDITOR.replace('content');
+  </script>
